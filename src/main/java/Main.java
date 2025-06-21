@@ -22,6 +22,19 @@ public class Main {
         System.out.println("-2 * 7 = " + calculadora.multiplicar(-2, 7));
         System.out.println("4 * 0 = " + calculadora.multiplicar(4, 0));
 
+        // Exemplos de divisão
+        System.out.println("\nDivisão:");
+        System.out.println("15 / 3 = " + calculadora.dividir(15, 3));
+        System.out.println("-10 / 2 = " + calculadora.dividir(-10, 2));
+        System.out.println("0 / 5 = " + calculadora.dividir(0, 5));
+        
+        // Exemplo de tratamento de divisão por zero
+        try {
+            System.out.println("10 / 0 = " + calculadora.dividir(10, 0));
+        } catch (ArithmeticException e) {
+            System.out.println("10 / 0 = " + e.getMessage());
+        }
+
         System.out.println("\n=== Fim da Demonstração ===");
     }
 }

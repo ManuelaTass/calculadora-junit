@@ -116,4 +116,49 @@ public class CalculadoraTest {
         assertEquals(0.06, calculadora.multiplicar(0.3, 0.2), 0.001);
         assertEquals(1.25, calculadora.multiplicar(2.5, 0.5), 0.001);
     }
+
+    // Testes para divisão
+    @Test
+    void testeDividirNumerosPositivos() {
+        assertEquals(5.0, calculadora.dividir(15.0, 3.0), 0.001);
+        assertEquals(2.5, calculadora.dividir(7.5, 3.0), 0.001);
+    }
+
+    @Test
+    void testeDividirNumerosNegativos() {
+        assertEquals(1.666, calculadora.dividir(-5.0, -3.0), 0.001);
+        assertEquals(-1.4, calculadora.dividir(-7.0, 5.0), 0.001);
+    }
+
+    @Test
+    void testeDividirPorUm() {
+        assertEquals(5.0, calculadora.dividir(5.0, 1.0), 0.001);
+        assertEquals(-3.0, calculadora.dividir(-3.0, 1.0), 0.001);
+        assertEquals(7.5, calculadora.dividir(7.5, 1.0), 0.001);
+    }
+
+    @Test
+    void testeDividirZeroPorNumero() {
+        assertEquals(0.0, calculadora.dividir(0.0, 5.0), 0.001);
+        assertEquals(0.0, calculadora.dividir(0.0, -3.0), 0.001);
+    }
+
+    @Test
+    void testeDividirPorZero() {
+        ArithmeticException exception = assertThrows(ArithmeticException.class, 
+            () -> calculadora.dividir(5.0, 0.0));
+        assertEquals("Erro: Divisão por zero não é permitida", exception.getMessage());
+    }
+
+    @Test
+    void testeDividirNumerosGrandes() {
+        assertEquals(1.5, calculadora.dividir(1500000000.0, 1000000000.0), 0.001);
+        assertEquals(0.001, calculadora.dividir(1000.0, 1000000.0), 0.001);
+    }
+
+    @Test
+    void testeDividirPrecisaoDecimal() {
+        assertEquals(1.5, calculadora.dividir(0.3, 0.2), 0.001);
+        assertEquals(5.0, calculadora.dividir(2.5, 0.5), 0.001);
+    }
 }

@@ -42,4 +42,18 @@ public class Calculadora {
     public double multiplicar(double a, double b) {
         return a * b;
     }
+    
+    /**
+     * Realiza a operação de divisão entre dois números
+     * @param a primeiro número (dividendo)
+     * @param b segundo número (divisor)
+     * @return resultado da divisão a / b
+     * @throws ArithmeticException se o divisor for zero
+     */
+    public double dividir(double a, double b) {
+        if (b == 0.0) {
+            throw new ArithmeticException("Erro: Divisão por zero não é permitida");
+        }
+        return a / b;
+    }
 }
