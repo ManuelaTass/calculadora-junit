@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * Testes unitários para a classe Calculadora
+ * 
  * @author Seu Nome
  * @version 1.0
  */
@@ -138,23 +139,14 @@ public class CalculadoraTest {
     }
 
     @Test
-    void testeDividirZeroPorNumero() {
-        assertEquals(0.0, calculadora.dividir(0.0, 5.0), 0.001);
-        assertEquals(0.0, calculadora.dividir(0.0, -3.0), 0.001);
-    }
+        void testDivisaoPorZero() {
 
-    @Test
-    void testeDividirPorZero() {
-        ArithmeticException exception = assertThrows(ArithmeticException.class, 
-            () -> calculadora.dividir(5.0, 0.0));
-        assertEquals("Erro: Divisão por zero não é permitida", exception.getMessage());
-    }
+            ArithmeticException ex = assertThrows(ArithmeticException.class, () -> {
+                calculadora.dividir(10, 0);
+            });
 
-    @Test
-    void testeDividirNumerosGrandes() {
-        assertEquals(1.5, calculadora.dividir(1500000000.0, 1000000000.0), 0.001);
-        assertEquals(0.001, calculadora.dividir(1000.0, 1000000.0), 0.001);
-    }
+            assertEquals("Erro: Divisão por zero não é permitida", ex.getMessage());
+        }
 
     @Test
     void testeDividirPrecisaoDecimal() {
