@@ -32,4 +32,14 @@ public class Calculadora {
     public double subtrair(double a, double b) {
         return a - b;
     }
+    
+    /**
+     * Realiza a operação de multiplicação entre dois números
+     * @param a primeiro número (multiplicando)
+     * @param b segundo número (multiplicador)
+     * @return resultado da multiplicação a * b
+     */
+    public double multiplicar(double a, double b) {
+        return a * b;
+    }
 }

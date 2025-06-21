@@ -78,4 +78,42 @@ public class CalculadoraTest {
         assertEquals(0.1, calculadora.subtrair(0.3, 0.2), 0.001);
         assertEquals(-0.1, calculadora.subtrair(0.2, 0.3), 0.001);
     }
+
+    // Testes para multiplicação
+    @Test
+    void testeMultiplicarNumerosPositivos() {
+        assertEquals(15.0, calculadora.multiplicar(5.0, 3.0), 0.001);
+        assertEquals(22.5, calculadora.multiplicar(7.5, 3.0), 0.001);
+    }
+
+    @Test
+    void testeMultiplicarNumerosNegativos() {
+        assertEquals(15.0, calculadora.multiplicar(-5.0, -3.0), 0.001);
+        assertEquals(-35.0, calculadora.multiplicar(-7.0, 5.0), 0.001);
+    }
+
+    @Test
+    void testeMultiplicarComZero() {
+        assertEquals(0.0, calculadora.multiplicar(5.0, 0.0), 0.001);
+        assertEquals(0.0, calculadora.multiplicar(0.0, 0.0), 0.001);
+        assertEquals(0.0, calculadora.multiplicar(-3.0, 0.0), 0.001);
+    }
+
+    @Test
+    void testeMultiplicarComUm() {
+        assertEquals(5.0, calculadora.multiplicar(5.0, 1.0), 0.001);
+        assertEquals(-3.0, calculadora.multiplicar(-3.0, 1.0), 0.001);
+        assertEquals(7.5, calculadora.multiplicar(1.0, 7.5), 0.001);
+    }
+
+    @Test
+    void testeMultiplicarNumerosGrandes() {
+        assertEquals(1000000000000000000.0, calculadora.multiplicar(1000000000.0, 1000000000.0), 0.001);
+    }
+
+    @Test
+    void testeMultiplicarPrecisaoDecimal() {
+        assertEquals(0.06, calculadora.multiplicar(0.3, 0.2), 0.001);
+        assertEquals(1.25, calculadora.multiplicar(2.5, 0.5), 0.001);
+    }
 }

@@ -16,6 +16,12 @@ public class Main {
         System.out.println("-2 - 7 = " + calculadora.subtrair(-2, 7));
         System.out.println("10 - 0 = " + calculadora.subtrair(10, 0));
 
+        // Exemplos de multiplicação
+        System.out.println("\nMultiplicação:");
+        System.out.println("5 * 3 = " + calculadora.multiplicar(5, 3));
+        System.out.println("-2 * 7 = " + calculadora.multiplicar(-2, 7));
+        System.out.println("4 * 0 = " + calculadora.multiplicar(4, 0));
+
         System.out.println("\n=== Fim da Demonstração ===");
     }
 }
