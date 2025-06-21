@@ -22,4 +22,14 @@ public class Calculadora {
     public double somar(double a, double b) {
         return a + b;
     }
+    
+    /**
+     * Realiza a operação de subtração entre dois números
+     * @param a primeiro número (minuendo)
+     * @param b segundo número (subtraendo)
+     * @return resultado da subtração a - b
+     */
+    public double subtrair(double a, double b) {
+        return a - b;
+    }
 }
