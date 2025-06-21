@@ -62,3 +62,24 @@ mainClass = "Main"
 build = ["javac", "-classpath", ".:target/dependency/*", "-d", ".", "$(find . -type f -name '*.java')"]
 run = ["java", "-classpath", ".:target/dependency/*", "Main"]
 deploymentTarget = "cloudrun"
+
+[workflows]
+runButton = "Run Calculator"
+
+[[workflows.workflow]]
+name = "Run Tests"
+author = 42036161
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "mvn test"
+
+[[workflows.workflow]]
+name = "Run Calculator"
+author = 42036161
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "mvn compile exec:java -Dexec.mainClass=\"Main\""
