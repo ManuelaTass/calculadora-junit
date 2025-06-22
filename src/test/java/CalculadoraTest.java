@@ -3,12 +3,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-/**
- * Testes unitários para a classe Calculadora
- * 
- * @author Seu Nome
- * @version 1.0
- */
 public class CalculadoraTest {
 
     private Calculadora calculadora;
